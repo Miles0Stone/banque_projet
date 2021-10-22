@@ -3,17 +3,19 @@ package banqueProjet;
 public class Compte {
 
     private int numero;
-    private int codeTypeCompte;
-    private int codeTitulaire;
+    private Typedecompte codeTypeCompte;
+    private Titulaire codeTitulaire;
     private float solde;
     
     
-    public Compte(int numero, int codeTypeCompte, int codeTitulaire, float solde) {
+    public Compte(int numero, Typedecompte codeTypeCompte, Titulaire codeTitulaire, float solde) {
         this.numero = numero;
         this.codeTypeCompte = codeTypeCompte;
         this.codeTitulaire = codeTitulaire;
         this.solde = solde;
     }
+
+    public Compte(){}
 
 
     public int getNumero() {
@@ -26,22 +28,22 @@ public class Compte {
     }
 
 
-    public int getCodeTypeCompte() {
+    public Typedecompte getCodeTypeCompte() {
         return codeTypeCompte;
     }
 
 
-    public void setCodeTypeCompte(int codeTypeCompte) {
+    public void setCodeTypeCompte(Typedecompte codeTypeCompte) {
         this.codeTypeCompte = codeTypeCompte;
     }
 
 
-    public int getCodeTitulaire() {
+    public Titulaire getCodeTitulaire() {
         return codeTitulaire;
     }
 
 
-    public void setCodeTitulaire(int codeTitulaire) {
+    public void setCodeTitulaire(Titulaire codeTitulaire) {
         this.codeTitulaire = codeTitulaire;
     }
 
@@ -58,7 +60,7 @@ public class Compte {
 
     @Override
     public String toString() {
-        return "Compte codeTitulaire : " + codeTitulaire + ", codeTypeCompte : " + codeTypeCompte + ", numero : " + numero
+        return "Compte codeTitulaire : " + codeTitulaire.getCode() + ", codeTypeCompte : " + codeTypeCompte.getId() + ", numero : " + numero
                 + ", solde : " + solde + "";
     }
 

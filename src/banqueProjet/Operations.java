@@ -5,14 +5,14 @@ import java.sql.Date;
 public class Operations {
 	
 	private int numero;
-	private int numCompte;
+	private Compte numCompte;
 	private Date date;
 	private String libelle;
 	private float montant;
-	private char typeOf;
+	private String typeOf;
 	
 	
-	public Operations(int numero, int numCompte, Date date, String libelle, float montant, char typeOf) {
+	public Operations(int numero, Compte numCompte, Date date, String libelle, float montant, String typeOf) {
 		
 		super();
 		this.numero = numero;
@@ -25,6 +25,7 @@ public class Operations {
 		
 	}
 
+	public Operations(){}
 
 	public int getNumero() {
 		return numero;
@@ -36,12 +37,12 @@ public class Operations {
 	}
 
 
-	public int getNumCompte() {
+	public Compte getNumCompte() {
 		return numCompte;
 	}
 
 
-	public void setNumCompte(int numCompte) {
+	public void setNumCompte(Compte numCompte) {
 		this.numCompte = numCompte;
 	}
 
@@ -76,19 +77,19 @@ public class Operations {
 	}
 
 
-	public char getTypeOf() {
+	public String getTypeOf() {
 		return typeOf;
 	}
 
 
-	public void setTypeOf(char typeOf) {
+	public void setTypeOf(String typeOf) {
 		this.typeOf = typeOf;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Operations numero : " + numero + ", numCompte : " + numCompte + ", date : " + date + ", libelle : " + libelle
+		return "Operations numero : " + numero + ", numCompte : " + numCompte.getNumero() + ", date : " + date + ", libelle : " + libelle
 				+ ", montant : " + montant + ", typeOf : " + typeOf + "";
 	}
 	
